@@ -28,7 +28,14 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxtjs/google-fonts", "@nuxt/image"],
+
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    classSuffix: "",
+  },
+
+  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/ui", "@nuxtjs/color-mode"],
 
   googleFonts: {
     families: {

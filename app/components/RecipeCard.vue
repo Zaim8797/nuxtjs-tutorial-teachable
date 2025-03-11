@@ -1,19 +1,44 @@
 <script setup lang="ts">
 import { type Recipe } from "../../types/types";
 
-// Terima data sebagai prop dari parent
-defineProps<{ recipe: Recipe }>();
+defineProps<{
+  recipe: Recipe;
+}>();
 </script>
 
 <template>
-  <div class="border rounded-lg p-4 shadow-md">
+  <div class="flex flex-col shadow rounded-md">
     <NuxtImg
       :src="recipe.image"
-      class="w-full h-48 object-cover rounded-md mb-4"
-      alt="Recipe image"
+      sizes="xs:100vw sm:50vw lg:400px"
+      format="webp"
+      densities="x1"
+      alt=""
+      class="rounded-t-md"
     />
-    <h3 class="text-xl font-bold mb-2">{{ recipe.name }}</h3>
-    <p class="text-gray-600">{{ recipe.cookTimeMinutes }} mins | {{ recipe.caloriesPerServing }} cal</p>
-    <NuxtLink :to="`/recipes/${recipe.id}`" class="text-blue-600 hover:underline">View Recipe</NuxtLink>
+    <div class="flex flex-col py-6 px-4 flex-1">
+      <p class="text-xl lg:text-2xl font-semibold mb-2">{{ recipe.name }}</p>
+      <div class="font-normal w-full bg-white/80 flex gap-8 text-lg lg:text-xl mb-4 mt-auto">
+        <div class="flex items-center gap-1">
+          <UIcon name="i-mdi-clock-time-eight-outline" class="text-dodgeroll-gold-500" />
+          <span>{{ recipe.cookTimeMinutes }}</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <UIcon name="i-mdi-fire" class="text-dodgeroll-gold-500" />
+          <span>{{ recipe.caloriesPerServing }}</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <UIcon name="i-mdi-star" class="text-dodgeroll-gold-500" />
+          <span>{{ recipe.rating }} ({{ recipe.reviewCount }})</span>
+        </div>
+      </div>
+      <UButton
+        :ui="{
+          base: 'self-start',
+        }"
+        :to="`/recipes/${recipe.id}`"
+        label="View"
+      />
+    </div>
   </div>
 </template>
