@@ -1,3 +1,4 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
@@ -35,13 +36,24 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  modules: ["@nuxtjs/google-fonts", "@nuxt/image", "@nuxt/ui", "@nuxtjs/color-mode"],
+  modules: [
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "@nuxt/ui",
+    "@nuxtjs/color-mode"
+  ],
 
   googleFonts: {
     families: {
       Montserrat: true,
     },
   },
+
+    runtimeConfig: {
+      kitKey: process.env.KIT_KEY,
+      kitSecret: process.env.KIT_SECRET
+    },
+  
 
   compatibilityDate: "2025-03-06",
 });
