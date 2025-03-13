@@ -15,14 +15,20 @@ import ColorModeBtn from './ColorModeBtn.vue';
       <ul class="flex gap-6 ml-auto text-xl font-bold capitalize items-center">
         <li>
           <NuxtLink to="/" class="flex gap-2 items-center">
-            <UIcon name="line-md:home-twotone"/>
+            <UIcon name="line-md:home-twotone" width="24" height="24"/>
             <span>Home</span>
           </NuxtLink>
         </li>
         <li>
           <NuxtLink to="/about" class="flex gap-2 items-center">
-            <UIcon name="line-md:alert-circle-twotone-loop"/>
+            <UIcon name="line-md:alert-circle-twotone-loop" width="24" height="24"/>
             <span>About</span>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/login" class="flex gap-2 items-center">
+            <UIcon name="line-md:login" width="24" height="24"/>
+            <span>Login</span>
           </NuxtLink>
         </li>
         <!-- Color Mode Button -->

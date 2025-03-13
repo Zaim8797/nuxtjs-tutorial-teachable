@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
 
-const props = defineProps({
+defineProps({
   error: Object as () => NuxtError,
 });
 </script>
@@ -13,10 +13,11 @@ const props = defineProps({
     </h1>
     <p class="mb-10 text-xl sm:text-3xl">{{ error?.statusMessage }}</p>
     <NuxtLink
-      to="/"
-      class="px-4 py-2 text-white bg-dodgeroll-gold rounded-md text-lg cursor-pointer"
-    >
-      Go home
-    </NuxtLink>
+  to="/"
+  class="px-4 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-md text-lg cursor-pointer"
+>
+  Go home
+</NuxtLink>
+
   </section>
 </template>
