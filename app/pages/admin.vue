@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import admin from '~/middleware/admin';
-
 const user = useCookie("user");
 
 definePageMeta({
